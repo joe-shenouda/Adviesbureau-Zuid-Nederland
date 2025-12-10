@@ -691,7 +691,7 @@
             <div class="grid md:grid-cols-3 gap-12">
                 <!-- Contact Formulier (2/3 breedte) -->
                 <div class="md:col-span-2">
-                    <form action="#" method="POST" class="space-y-6 bg-white">
+                    <form action="contact.php" method="POST" class="space-y-6 bg-white">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Voor- en achternaam *</label>
@@ -822,9 +822,8 @@
                     </ul>
                 </div>
 
-                <!-- Google Maps Placeholder (Omdat we geen API key hebben in deze demo) -->
+                <!-- Google Maps Placeholder -->
                 <div class="h-64 bg-slate-800 rounded-xl overflow-hidden relative">
-                    <!-- Dit is een statische weergave. In productie zou hier een iframe staan -->
                      <iframe 
                         width="100%" 
                         height="100%" 
@@ -949,7 +948,7 @@
         </div>
     </div>
 
-    <!-- Script for Modal -->
+    <!-- Script for Modal and Form Handling -->
     <script>
         function toggleModal(modalID){
             document.getElementById(modalID).classList.toggle("modal-active");
