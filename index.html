@@ -678,15 +678,110 @@
         </div>
     </section>
 
-    <!-- Contact & Footer -->
-    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10">
+    <!-- Contact Sectie (Nieuw) -->
+    <section id="contact" class="py-20 bg-white border-t">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Contact</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Heeft u vragen of wilt u een afspraak maken? Vul het onderstaande formulier in of neem direct contact met ons op.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Contact Formulier (2/3 breedte) -->
+                <div class="md:col-span-2">
+                    <form action="#" method="POST" class="space-y-6 bg-white">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Voor- en achternaam *</label>
+                                <input type="text" id="name" name="input_text" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">E-mailadres *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Telefoonnummer *</label>
+                            <input type="tel" id="phone" name="input_text_1" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Bericht</label>
+                            <textarea id="message" name="description" rows="5" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-slate-50"></textarea>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="gdpr" name="gdpr-agreement" type="checkbox" required class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="gdpr" class="font-medium text-slate-600">Ik stem ermee in dat deze website mijn ingediende informatie opslaat zodat ze op mijn vraag kunnen reageren *</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition shadow-md w-full md:w-auto">
+                            Verstuur bericht
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Gegevens (1/3 breedte) -->
+                <div>
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 h-full">
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 border-b pb-4">Overige gegevens</h3>
+                        <ul class="space-y-6 text-slate-600">
+                            <li class="flex items-start gap-4">
+                                <div class="bg-white p-3 rounded-full shadow-sm text-blue-600">
+                                    <i class="fa-solid fa-location-dot text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-semibold text-slate-900">Adres</span>
+                                    <span>Hoofstraat 5<br>6031 AC Nederweert</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="bg-white p-3 rounded-full shadow-sm text-blue-600">
+                                    <i class="fa-solid fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-semibold text-slate-900">Telefoon</span>
+                                    <a href="tel:+31495626153" class="hover:text-blue-600 transition block">+31 (0) 495 626153</a>
+                                    <a href="tel:+31650623380" class="hover:text-blue-600 transition block text-sm mt-1">Mobiel: +31 (0) 650623380</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="bg-white p-3 rounded-full shadow-sm text-blue-600">
+                                    <i class="fa-solid fa-envelope text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-semibold text-slate-900">Email</span>
+                                    <a href="mailto:info@adviesbureau-zuid.nl" class="hover:text-blue-600 transition">info@adviesbureau-zuid.nl</a>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div class="bg-white p-3 rounded-full shadow-sm text-blue-600">
+                                    <i class="fa-solid fa-globe text-xl"></i>
+                                </div>
+                                <div>
+                                    <span class="block font-semibold text-slate-900">Website</span>
+                                    <a href="https://www.adviesbureau-zuid.nl" target="_blank" class="hover:text-blue-600 transition">www.adviesbureau-zuid.nl</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-3 gap-12 mb-12">
                 
                 <!-- Contact Info -->
                 <div>
                     <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
-                        <i class="fa-solid fa-envelope-open-text text-blue-500"></i> Contact
+                        <i class="fa-solid fa-envelope-open-text text-blue-500"></i> Snel Contact
                     </h3>
                     <ul class="space-y-4 text-slate-300">
                         <li class="flex items-start gap-3">
