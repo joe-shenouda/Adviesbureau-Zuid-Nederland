@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="nl-NL" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adviesbureau Zuid Nederland | Accountant & Boekhoudkantoor Nederweert</title>
+    <meta name="description" content="Professioneel administratiekantoor in Nederweert. Vaste prijzen voor ZZP, VOF en BV. Geen verrassingen achteraf.">
+    
+    <!-- Tailwind CSS (voor moderne styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome (voor iconen) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts (Inter font voor een professionele look) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Modal styling */
+        .modal {
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .modal.modal-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Header / Navigatie -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo / Bedrijfsnaam -->
+            <a href="#" class="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+                <span class="bg-blue-600 text-white p-2 rounded-lg"><i class="fa-solid fa-calculator"></i></span>
+                <div>
+                    Adviesbureau <span class="text-blue-600">Zuid Nederland</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex gap-8 font-medium text-slate-600">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#waarom-wij" class="hover:text-blue-600 transition">Over Ons</a>
+                <a href="#diensten" class="hover:text-blue-600 transition">Diensten & Prijzen</a>
+                <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg">Contact</a>
+            </nav>
+
+            <!-- Mobiel Menu Knop -->
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-slate-800 text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobiel Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#home" class="block py-3 px-4 border-b hover:bg-slate-50">Home</a>
+            <a href="#waarom-wij" class="block py-3 px-4 border-b hover:bg-slate-50">Over Ons</a>
+            <a href="#diensten" class="block py-3 px-4 border-b hover:bg-slate-50">Diensten & Prijzen</a>
+            <a href="#contact" class="block py-3 px-4 text-blue-600 font-bold">Contact opnemen</a>
+        </div>
+    </header>
+
+    <!-- Hero Sectie -->
+    <section id="home" class="hero-bg h-screen min-h-[600px] flex items-center justify-center text-white pt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-blue-400 font-bold tracking-widest uppercase mb-4 text-sm md:text-base">Administratiekantoor & Belastingadvies</h2>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Boekhouding zonder <br/>verrassingen</h1>
+            <p class="text-xl text-slate-200 mb-8 max-w-2xl mx-auto">
+                Is uw accountant ook zo duur? Het kan anders. Wij bieden professioneel advies en administratie tegen vaste tarieven.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#diensten" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition shadow-lg text-lg">
+                    Bekijk onze pakketten
+                </a>
+                <a href="#contact" class="bg-white hover:bg-slate-100 text-slate-900 px-8 py-4 rounded-lg font-bold transition shadow-lg text-lg">
+                    Gratis kennismaken
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waarom Wij / Het Probleem -->
+    <section id="waarom-wij" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-blue-100 text-blue-800 px-4 py-1 rounded-full text-sm font-semibold mb-4">Onze Filosofie</div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Geen angst meer voor de rekening</h2>
+                    <p class="text-slate-600 mb-4 text-lg leading-relaxed">
+                        Breekt het angstzweet u ook uit als de rekening van de accountant op de deurmat valt? Denkt u: "Het hoort er helaas bij"?
+                    </p>
+                    <p class="text-slate-600 mb-6 text-lg leading-relaxed">
+                        In een tijd van economische groei is het belangrijk dat u zich geen zorgen hoeft te maken over complexe regelgeving en dat u financieel precies weet waar u aan toe bent.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fa-solid fa-check-circle text-green-500"></i> Vaste maandelijkse prijzen
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fa-solid fa-check-circle text-green-500"></i> Geen uurtje-factuurtje verrassingen
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-700">
+                            <i class="fa-solid fa-check-circle text-green-500"></i> Persoonlijk advies en contact
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" alt="Overleg accountant" class="rounded-2xl shadow-2xl w-full object-cover h-96">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl hidden md:block border-l-4 border-blue-600">
+                        <p class="font-bold text-slate-900 text-lg">"Het kan anders!"</p>
+                        <p class="text-sm text-slate-500">Adviesbureau Zuid Nederland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diensten & Prijzen -->
+    <section id="diensten" class="py-20 bg-slate-50 border-t">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Onze Diensten & Pakketten</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">
+                    Wij leveren onze diensten tegen zeer concurrerende prijzen. U kunt kiezen voor vaste prijsafspraken (pakketten) of op uurbasis. 
+                </p>
+            </div>
+
+            <!-- Algemene diensten lijst -->
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 max-w-4xl mx-auto mb-16">
+                <h3 class="text-xl font-bold mb-6 text-slate-800 border-b pb-2">Wij zijn u graag van dienst voor:</h3>
+                <div class="grid md:grid-cols-2 gap-x-8 gap-y-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                        <span class="text-slate-600">Financiële administratie (zelf boeken of uitbesteden)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                        <span class="text-slate-600">Salarisadministratie incl. aangifte loonheffing</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                        <span class="text-slate-600">Aangifte omzet-, inkomsten- of vennootschapsbelasting</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                        <span class="text-slate-600">Startersadvies voor nieuwe ondernemers</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                        <span class="text-slate-600">Organisatorische en financiële vraagstukken</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check text-blue-500 mt-1"></i>
+                        <span class="text-slate-600">Oplossen van fiscale of financiële problemen</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-12">
+                <h3 class="text-2xl font-bold text-slate-900">Kies uw pakket</h3>
+                <p class="text-slate-600 mt-2">Duidelijkheid vooraf, geen verrassingen achteraf.</p>
+            </div>
+
+            <!-- Pakketten Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- ZZP -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300 border border-slate-100 flex flex-col">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3 class="text-xl font-bold mb-2">ZZP & Eenmanszaak</h3>
+                    <p class="text-slate-500 mb-6 text-sm">Ideaal voor de zelfstandige ondernemer.</p>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-bold text-slate-900">€ 65,-</div>
+                        <div class="text-sm text-slate-400 mb-6">vanaf / excl. BTW per maand</div>
+                        <a href="#zzp-details" class="block w-full py-3 border-2 border-blue-600 text-blue-600 font-bold text-center rounded-lg hover:bg-blue-600 hover:text-white transition">Meer info</a>
+                    </div>
+                </div>
+
+                <!-- VOF -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300 border border-blue-200 relative flex flex-col">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">Populair</div>
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-xl font-bold mb-2">VOF</h3>
+                    <p class="text-slate-500 mb-6 text-sm">Vennootschap onder Firma.</p>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-bold text-slate-900">€ 75,-</div>
+                        <div class="text-sm text-slate-400 mb-6">vanaf / excl. BTW per maand</div>
+                        <a href="#vof-details" class="block w-full py-3 bg-blue-600 text-white font-bold text-center rounded-lg hover:bg-blue-700 transition">Meer info</a>
+                    </div>
+                </div>
+
+                <!-- BV -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300 border border-slate-100 flex flex-col">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fa-solid fa-building"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Besloten Vennootschap</h3>
+                    <p class="text-slate-500 mb-6 text-sm">Volledige administratie voor uw BV.</p>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-bold text-slate-900">€ 95,-</div>
+                        <div class="text-sm text-slate-400 mb-6">vanaf / excl. BTW per maand</div>
+                        <a href="#bv-details" class="block w-full py-3 border-2 border-slate-200 text-slate-600 font-bold text-center rounded-lg hover:border-blue-600 hover:text-blue-600 transition">Meer info</a>
+                    </div>
+                </div>
+
+                <!-- Particulier -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition duration-300 border border-slate-100 flex flex-col">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Particulier</h3>
+                    <p class="text-slate-500 mb-6 text-sm">Aangifte inkomstenbelasting en advies.</p>
+                    <div class="mt-auto">
+                        <div class="text-3xl font-bold text-slate-900">€ 59,-</div>
+                        <div class="text-sm text-slate-400 mb-6">incl. BTW <br><strong>per jaar</strong></div>
+                        <a href="#particulier-details" class="block w-full py-3 border-2 border-slate-200 text-slate-600 font-bold text-center rounded-lg hover:border-blue-600 hover:text-blue-600 transition">Meer info</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ZZP DETAILS SECTIE -->
+            <div id="zzp-details" class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 max-w-6xl mx-auto scroll-mt-24">
+                <div class="bg-blue-600 p-6 md:p-8 text-white">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h3 class="text-2xl font-bold flex items-center gap-3">
+                                <i class="fa-solid fa-user-tie"></i>
+                                Specificaties: ZZP & Eenmanszaak
+                            </h3>
+                            <p class="opacity-90 mt-1">Zelfstandige zonder personeel</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-3xl font-bold">€ 65,-</span>
+                            <span class="text-sm opacity-80">excl. BTW per maand</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8 grid lg:grid-cols-2 gap-12">
+                    <!-- Links: Inbegrepen -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-green-600"></i> Inbegrepen in basispakket
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Advisering (zowel telefonisch als op afspraak)</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Winstaangifte voor ondernemers</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aangifte inkomstenbelasting fiscale partners</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Financiële jaarrekening</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Bespreken aangifte en jaarrekening</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aanvraag toeslagen en uitstel, indienen bezwaarschriften, begeleiding controles</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aangifte omzetbelasting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Rechts: Opties -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-plus text-blue-600"></i> Aanvullende Opties
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">ICP -opgaaf (omzetbelasting)</span>
+                                    <span class="text-sm text-slate-500">€ 10 per maand excl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Tussentijdse / jaarrapportage</span>
+                                    <span class="text-sm text-slate-500">€ 125 excl. BTW per rapport</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Boekhouden (inboeken facturen & bank)</span>
+                                    <ul class="text-sm text-slate-500 mt-1 list-disc pl-4 space-y-1">
+                                        <li>€ 35 (max. 180 facturen/jaar)</li>
+                                        <li>€ 45 (max. 300 facturen/jaar)</li>
+                                        <li>€ 55 (max. 500 facturen/jaar)</li>
+                                    </ul>
+                                    <span class="text-xs text-slate-400 italic">Prijzen per maand excl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Loonadministratie</span>
+                                    <span class="text-sm text-slate-500">€ 7,50 excl. BTW per werknemer p/m</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">(Online) boekhoudpakket</span>
+                                    <span class="text-sm text-slate-500">+/- € 15 excl. BTW per maand</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Facturering en debiteurenbeheer</span>
+                                    <span class="text-sm text-slate-500">Prijs op aanvraag</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-6 text-center border-t border-slate-100">
+                     <a href="#contact" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        Dit pakket aanvragen
+                     </a>
+                </div>
+            </div>
+
+            <!-- VOF DETAILS SECTIE -->
+            <div id="vof-details" class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 max-w-6xl mx-auto scroll-mt-24 mt-12">
+                <div class="bg-blue-600 p-6 md:p-8 text-white">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h3 class="text-2xl font-bold flex items-center gap-3">
+                                <i class="fa-solid fa-users"></i>
+                                Specificaties: VOF
+                            </h3>
+                            <p class="opacity-90 mt-1">Vennootschap onder Firma</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-3xl font-bold">€ 75,-</span>
+                            <span class="text-sm opacity-80">excl. BTW per maand</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8 grid lg:grid-cols-2 gap-12">
+                    <!-- Links: Inbegrepen -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-green-600"></i> Inbegrepen in basispakket
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Advisering (zowel telefonisch als op afspraak)</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Winstaangifte voor maximaal 3 vennoten</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aangifte inkomstenbelasting fiscale partners (max 3)</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Financiële jaarrekening</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Bespreken aangifte en jaarrekening</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aanvraag toeslagen en uitstel, indienen bezwaarschriften, begeleiding controles</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aangifte omzetbelasting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Rechts: Opties -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-plus text-blue-600"></i> Aanvullende Opties
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">ICP -opgaaf (omzetbelasting)</span>
+                                    <span class="text-sm text-slate-500">€ 10 per maand excl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Tussentijdse / jaarrapportage</span>
+                                    <span class="text-sm text-slate-500">€ 125 excl. BTW per rapport</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Boekhouden (inboeken facturen & bank)</span>
+                                    <ul class="text-sm text-slate-500 mt-1 list-disc pl-4 space-y-1">
+                                        <li>€ 35 (max. 180 facturen/jaar)</li>
+                                        <li>€ 45 (max. 300 facturen/jaar)</li>
+                                        <li>€ 55 (max. 500 facturen/jaar)</li>
+                                    </ul>
+                                    <span class="text-xs text-slate-400 italic">Prijzen per maand excl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Loonadministratie</span>
+                                    <span class="text-sm text-slate-500">€ 7,50 excl. BTW per werknemer p/m</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">(Online) boekhoudpakket</span>
+                                    <span class="text-sm text-slate-500">+/- € 15 excl. BTW per maand</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Facturering en debiteurenbeheer</span>
+                                    <span class="text-sm text-slate-500">Prijs op aanvraag</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-6 text-center border-t border-slate-100">
+                     <a href="#contact" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        Dit pakket aanvragen
+                     </a>
+                </div>
+            </div>
+
+            <!-- BV DETAILS SECTIE -->
+            <div id="bv-details" class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 max-w-6xl mx-auto scroll-mt-24 mt-12">
+                <div class="bg-blue-600 p-6 md:p-8 text-white">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h3 class="text-2xl font-bold flex items-center gap-3">
+                                <i class="fa-solid fa-building"></i>
+                                Specificaties: Besloten Vennootschap
+                            </h3>
+                            <p class="opacity-90 mt-1">Compleet pakket voor de BV</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-3xl font-bold">€ 95,-</span>
+                            <span class="text-sm opacity-80">excl. BTW per maand</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8 grid lg:grid-cols-2 gap-12">
+                    <!-- Links: Inbegrepen -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-green-600"></i> Inbegrepen in basispakket
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Advisering (zowel telefonisch als op afspraak)</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aangifte Vennootschapsbelasting</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Deponering en notulen AvA</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Financiële jaarrekening</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Bespreken aangifte en jaarrekening</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aanvraag uitstel, indienen bezwaarschriften, begeleiding controles</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aangifte omzetbelasting</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Rechts: Opties -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-plus text-blue-600"></i> Aanvullende Opties
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">ICP -opgaaf (omzetbelasting)</span>
+                                    <span class="text-sm text-slate-500">€ 10 per maand excl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Tussentijdse / jaarrapportage</span>
+                                    <span class="text-sm text-slate-500">€ 125 excl. BTW per rapport</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Boekhouden (inboeken facturen & bank)</span>
+                                    <ul class="text-sm text-slate-500 mt-1 list-disc pl-4 space-y-1">
+                                        <li>€ 35 (max. 180 facturen/jaar)</li>
+                                        <li>€ 45 (max. 300 facturen/jaar)</li>
+                                        <li>€ 55 (max. 500 facturen/jaar)</li>
+                                    </ul>
+                                    <span class="text-xs text-slate-400 italic">Prijzen per maand excl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Loonadministratie</span>
+                                    <span class="text-sm text-slate-500">€ 7,50 excl. BTW per werknemer p/m</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">(Online) boekhoudpakket</span>
+                                    <span class="text-sm text-slate-500">+/- € 15 excl. BTW per maand</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Facturering en debiteurenbeheer</span>
+                                    <span class="text-sm text-slate-500">Prijs op aanvraag</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-6 text-center border-t border-slate-100">
+                     <a href="#contact" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        Dit pakket aanvragen
+                     </a>
+                </div>
+            </div>
+
+            <!-- PARTICULIER DETAILS SECTIE -->
+            <div id="particulier-details" class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200 max-w-6xl mx-auto scroll-mt-24 mt-12">
+                <div class="bg-blue-600 p-6 md:p-8 text-white">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <h3 class="text-2xl font-bold flex items-center gap-3">
+                                <i class="fa-solid fa-house-chimney"></i>
+                                Specificaties: Particulier
+                            </h3>
+                            <p class="opacity-90 mt-1">Aangifte inkomstenbelasting & toeslagen</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-3xl font-bold">€ 59,-</span>
+                            <span class="text-sm opacity-80">incl. BTW per jaar</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8 grid lg:grid-cols-2 gap-12">
+                    <!-- Links: Inbegrepen -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-green-600"></i> Inbegrepen in basispakket
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Telefonische advisering</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aangifte inkomstenbelasting</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Aanvraag zorg- en huurtoeslag</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-check text-green-500 mt-1 flex-shrink-0"></i>
+                                <span>Eventuele opname in uitstelregeling</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Rechts: Opties -->
+                    <div>
+                        <h4 class="text-lg font-bold text-slate-900 mb-6 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-plus text-blue-600"></i> Aanvullende Opties
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Fiscale partner aangifte</span>
+                                    <span class="text-sm text-slate-500">€ 20 incl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Aanvraag kinderopvangtoeslag (KOT)</span>
+                                    <span class="text-sm text-slate-500">€ 25 incl. BTW per aanvraag/wijziging</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Bezwaarschrift IB of toeslagen</span>
+                                    <span class="text-sm text-slate-500">€ 55 incl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Aangifte schenkbelasting</span>
+                                    <span class="text-sm text-slate-500">€ 30 incl. BTW</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-plus text-blue-500 mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <span class="font-semibold block">Aangifte erfbelasting</span>
+                                    <span class="text-sm text-slate-500">Prijs op aanvraag</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-6 text-center border-t border-slate-100">
+                     <a href="#contact" class="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition shadow-md">
+                        Afspraak maken
+                     </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope-open-text text-blue-500"></i> Contact
+                    </h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-blue-500"></i>
+                            <span>Hoofstraat 5<br>6031 AC NEDERWEERT</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-blue-500"></i>
+                            <a href="tel:+31495626153" class="hover:text-white transition">+31 (0) 495 626153</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-mobile-screen text-blue-500"></i>
+                            <a href="tel:+31650623380" class="hover:text-white transition">+31 (0) 650623380</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-blue-500"></i>
+                            <a href="mailto:info@adviesbureau-zuid.nl" class="hover:text-white transition">info@adviesbureau-zuid.nl</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Openingstijden -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Openingstijden</h3>
+                    <ul class="space-y-2 text-slate-300">
+                        <li class="flex justify-between border-b border-slate-700 pb-2">
+                            <span>Maandag - Vrijdag</span>
+                            <span>09.00 – 17.00 uur</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-700 pb-2 text-slate-500">
+                            <span>Zaterdag</span>
+                            <span>Gesloten</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-700 pb-2 text-slate-500">
+                            <span>Zondag</span>
+                            <span>Gesloten</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Google Maps Placeholder (Omdat we geen API key hebben in deze demo) -->
+                <div class="h-64 bg-slate-800 rounded-xl overflow-hidden relative">
+                    <!-- Dit is een statische weergave. In productie zou hier een iframe staan -->
+                     <iframe 
+                        width="100%" 
+                        height="100%" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        src="https://maps.google.com/maps?q=Hoofstraat+5+6031+AC+NEDERWEERT&hl=nl&z=15&amp;output=embed"
+                        class="opacity-80 hover:opacity-100 transition duration-500"
+                     >
+                     </iframe>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-slate-800 pt-8 mt-8 text-center text-slate-500 text-sm">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Adviesbureau Zuid Nederland. Alle rechten voorbehouden.</p>
+                <div class="mt-2">
+                    <button onclick="toggleModal('privacy-modal')" class="hover:text-white mx-2 transition underline bg-transparent border-0 cursor-pointer">Privacy Statement</button> | 
+                    <a href="#" class="hover:text-white mx-2 transition">Algemene Voorwaarden</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Statement Modal -->
+    <div id="privacy-modal" class="modal fixed w-full h-full top-0 left-0 flex items-center justify-center z-50">
+        <div class="modal-overlay absolute w-full h-full bg-slate-900 opacity-90" onclick="toggleModal('privacy-modal')"></div>
+        
+        <div class="modal-container bg-white w-11/12 md:max-w-4xl mx-auto rounded-lg shadow-2xl z-50 overflow-y-auto max-h-[90vh] animate-fade-in-down">
+            
+            <div class="modal-content py-4 text-left px-6">
+                <!-- Title -->
+                <div class="flex justify-between items-center pb-3 border-b">
+                    <p class="text-2xl font-bold text-slate-900">Privacy Statement</p>
+                    <div class="modal-close cursor-pointer z-50" onclick="toggleModal('privacy-modal')">
+                        <i class="fa-solid fa-xmark text-2xl text-slate-500 hover:text-slate-800"></i>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="my-5 text-slate-700 space-y-6 text-sm md:text-base leading-relaxed">
+                    <p class="font-bold">Adviesbureau Zuid, gevestigd aan Hoofstraat 5 6031AC Nederweert, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.</p>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Contactgegevens</h4>
+                        <p>Website: <a href="https://www.adviesbureau-zuid.nl" class="text-blue-600 hover:underline">https://www.adviesbureau-zuid.nl</a></p>
+                        <p>Adres: Hoofstraat 5, 6031AC Nederweert</p>
+                        <p>Telefoonnummer: +31 (0)495 62 61 53</p>
+                        <p class="mt-2 italic">Meneer Maslowski is de Functionaris Gegevensbescherming van Adviesbureau Zuid. Hij is te bereiken via <a href="mailto:info@adviesbureau-zuid.nl" class="text-blue-600 hover:underline">info@adviesbureau-zuid.nl</a>.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Persoonsgegevens die wij verwerken</h4>
+                        <p class="mb-2">Adviesbureau Zuid verwerkt uw persoonsgegevens doordat u gebruik maakt van onze diensten en/of omdat u deze zelf aan ons verstrekt. Hieronder vindt u een overzicht van de persoonsgegevens die wij verwerken:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Voor- en achternaam</li>
+                            <li>Adresgegevens</li>
+                            <li>Telefoonnummer</li>
+                            <li>E-mailadres</li>
+                            <li>IP-adres</li>
+                            <li>Gegevens over uw activiteiten op onze website</li>
+                            <li>Gegevens over uw surfgedrag over verschillende websites heen (bijvoorbeeld advertentienetwerken)</li>
+                            <li>Internetbrowser en apparaat type</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Bijzondere en/of gevoelige persoonsgegevens</h4>
+                        <p>Onze website en/of dienst heeft niet de intentie gegevens te verzamelen over websitebezoekers die jonger zijn dan 16 jaar, tenzij ze toestemming hebben van ouders of voogd. We kunnen echter niet controleren of een bezoeker ouder dan 16 is. Wij raden ouders dan ook aan betrokken te zijn bij de online activiteiten van hun kinderen. Als u er van overtuigd bent dat wij zonder die toestemming persoonlijke gegevens hebben verzameld over een minderjarige, neem dan contact met ons op via info@adviesbureau-zuid.nl, dan verwijderen wij deze informatie.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Doel en grondslag verwerking</h4>
+                        <p class="mb-2">Adviesbureau Zuid verwerkt uw persoonsgegevens voor de volgende doelen:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>U te kunnen bellen of e-mailen indien dit nodig is om onze dienstverlening uit te kunnen voeren.</li>
+                            <li>U te informeren over wijzigingen van onze diensten en producten.</li>
+                            <li>U de mogelijkheid te bieden een account aan te maken.</li>
+                            <li>Om de website te verbeteren en het aanbod van producten en diensten af te stemmen op uw voorkeuren.</li>
+                            <li>Om te voldoen aan wettelijke verplichtingen, zoals gegevens voor belastingaangifte.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Geautomatiseerde besluitvorming</h4>
+                        <p>Adviesbureau Zuid neemt niet op basis van geautomatiseerde verwerkingen besluiten over zaken die (aanzienlijke) gevolgen kunnen hebben voor personen.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Bewaartermijn</h4>
+                        <p>Wij bewaren persoonsgegevens nooit langer dan wettelijk is toegestaan. Enkel langer op uw verzoek dan minimaal wettelijk wordt voorgeschreven. Indien u wilt weten welke gegevens wij van u hebben bewaard kunt u een email sturen naar info@adviesbureau-zuid.nl.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Delen van persoonsgegevens met derden</h4>
+                        <p>Adviesbureau Zuid verstrekt uitsluitend aan derden en alleen als dit nodig is voor de uitvoering van onze overeenkomst met u of om te voldoen aan een wettelijke verplichting.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Cookies</h4>
+                        <p>Adviesbureau Zuid gebruikt <strong>geen</strong> cookies of vergelijkbare technieken.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Gegevens inzien, aanpassen of verwijderen</h4>
+                        <p>U heeft het recht om uw persoonsgegevens in te zien, te corrigeren of te verwijderen. Daarnaast heeft u het recht om uw eventuele toestemming voor de gegevensverwerking in te trekken of bezwaar te maken tegen de verwerking. U kunt een verzoek sturen naar <a href="mailto:info@adviesbureau-zuid.nl" class="text-blue-600 hover:underline">info@adviesbureau-zuid.nl</a>.</p>
+                        <p class="mt-2 text-sm text-slate-500">Ter bescherming van uw privacy vragen wij u een kopie van uw identiteitsbewijs met het verzoek mee te sturen (waarbij BSN en pasfoto zwart zijn gemaakt).</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-lg text-slate-900 mb-2">Beveiliging</h4>
+                        <p>Adviesbureau Zuid neemt de bescherming van uw gegevens serieus en neemt passende maatregelen om misbruik, verlies, onbevoegde toegang, ongewenste openbaarmaking en ongeoorloofde wijziging tegen te gaan.</p>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="flex justify-end pt-2 border-t">
+                    <button onclick="toggleModal('privacy-modal')" class="px-4 py-2 bg-blue-600 p-3 rounded-lg text-white hover:bg-blue-700 font-bold">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Modal -->
+    <script>
+        function toggleModal(modalID){
+            document.getElementById(modalID).classList.toggle("modal-active");
+            document.body.classList.toggle("overflow-hidden"); // Prevent background scrolling
+        }
+    </script>
+
+</body>
+</html>
